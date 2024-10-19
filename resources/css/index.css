@@ -1,0 +1,389 @@
+:root {
+    --darkBg: #333;
+    --lightBg: #f0f0f0;
+    --lightColor: #fafafa;
+    scroll-behavior: smooth;
+}
+* {
+    box-sizing: border-box;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: '';
+    width: 100%;
+    height: 1000px;
+    position: absolute;
+    background: radial-gradient(
+        1000px circle at 80px 80px, rgb(222, 60, 114) 40%, purple 50%, rgb(9, 219, 219) 100%
+    );
+    z-index: -1;
+}
+
+header {
+    height: 70px;
+    width: 100%;
+    background-color: #00021fdd;
+    color: var(--lightColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .logo {
+    filter: invert();
+    width: 100px;
+}
+header .navigation .linkList .link {
+    display: inline-block;
+}
+header .navigation .linkList .link a{
+    color: var(--lightColor);
+    padding: 10px;
+    margin: 0 2px;
+    text-decoration:none;
+}
+header .navigation .linkList .link a:hover {
+    color: var(--lightBg);
+}
+
+header .getQuoteBtn {
+    background-color: var(--lightBg);
+    color: black;    
+    border: 1px solid var(--lightBg);
+    border-radius: 50px;
+    cursor: pointer;
+    outline:none;
+    padding: 10px 15px;
+    filter: drop-shadow(0px 2px 0px black);
+    transition: 0.15s ease-in-out all;
+}
+header .getQuoteBtn:hover {
+    background-color:#3333f0;
+    border: none;
+    color: var(--lightColor);
+}
+header .getQuoteBtn:active {
+    box-shadow: 1px 1px 3px inset black;
+}
+
+main {
+    background-color: #00021fdd;
+    min-height: calc(100vh - 70px);
+    width: 100%;
+}
+main .contentContainer {
+    display: flex;
+    flex-direction: column;
+}
+main .mainContent1 {
+    position: absolute;
+    left: 8%;
+    color: var(--lightColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(80% - 300px);
+}
+main .contentContainer .transparentBG {
+    width: 100%;
+    height: 900px;
+}
+main .contentContainer .whiteBG {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--lightBg);
+}
+main .contentContainer .styledBG{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #00021fdd;
+}
+main .contentContainer .styledBG::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: radial-gradient(
+        1000px circle at -100px -100px, rgb(222, 60, 114) 40%, purple 50%, rgb(9, 219, 219) 100%
+    );
+}
+main .contentContainer .styledBG::after {
+    content: '';
+    background-color: #00021fdd;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+main .mainContent1 .introduction {
+    width: 100%;
+    height: 70vh;
+    padding: 80px 80px;
+}
+main .mainContent1 .introduction h2 {
+    font-size: 36px;
+}
+main .mainContent1 .introduction h1 {
+    font-size: 48px;
+}
+.button1 {
+    background-color: #3333f0;
+    border: none;
+    border-radius: 20px;
+    color: var(--lightColor);
+    cursor: pointer;
+    outline:none;
+    padding: 10px 15px;
+    line-height: 12px;
+    margin-top: 20px;
+    position: relative;
+}
+main .mainContent1 hr {
+    background-color: var(--lightBg);
+    width: 100%;
+    filter: blur(0.8px);
+    border-radius: 30px;
+    margin-top: 50px;
+}
+main .mainContent1 .about {
+    padding: 80px 0;
+    width: 100%;
+}
+main .mainContent1 .about h2 {
+    font-size: 36px;
+}
+main .mainContent1 .about p {
+    margin-top: 10px;
+    line-height: 24px;
+    text-align: justify;
+}
+main .mainContent1 .projects, .contact {
+    background-color: var(--lightBg);
+    color: var(--darkBg);
+    margin-top: 80px;
+    padding: 20px 0 40px 0;
+    text-align: center;
+    width: 100%;
+}
+main .mainContent1 .projects h4 {
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+main .mainContent1 .projects .projectCards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 30px;
+    padding-bottom: 30px;
+}
+main .mainContent1 .projects .projectCards .card{
+    width: 200px;
+    height: 110px;
+    background-color: #061634;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    transform: scale(2);
+}
+main .mainContent1 .projects .projectCards .card img{
+    height: 100%;
+}
+/* Contact Section */
+main .mainContent1 .contact {
+    background-color: transparent;
+    color: var(--lightColor)
+}
+main .mainContent1 .contact .contactForm {
+    padding: 40px;
+}
+main .mainContent1 .contact .contactForm form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+main .mainContent1 .contact .contactForm form label{
+    width: 300px;
+    text-align: left;
+}
+main .mainContent1 .contact .contactForm form input, textarea, #formSubmitBtn{
+    background: var(--lightBg);
+    border: 1px inset var(--lightBg);
+    border-radius: 5px;
+    height: 40px;
+    outline: none;
+    padding: 10px;
+    width: 300px;
+}
+form textarea {
+    height: 150px;
+    max-height: 150px;
+    min-height: 150px;
+    max-width: 300px;
+    min-width: 300px; 
+    resize: none;
+}
+#formSubmitBtn {
+    cursor: pointer;
+    height: 40px;
+    padding: 5px;
+    transition: 0.2s linear all;
+}
+#formSubmitBtn:hover {
+    background-color: #3333f0;
+    border: none;
+    color: white;
+}
+#formSubmitBtn i{
+    position: relative;
+    transition: 0.2s linear all;
+}
+#formSubmitBtn:hover i {
+    transform: translateX(10px);
+}
+main .sideContent {
+    position: absolute;
+    right: 8%;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+main .sideContent .person {
+    align-items: center;
+    color: var(--lightColor);
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+main .sideContent .person .photo {
+    border-radius: 10px;
+    outline: none;
+    width: 150px;
+    height: 180px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+}
+main .sideContent .person .photo img {
+    width: 100%;
+}
+main .sideContent .person h4{
+    margin-bottom: 10px;
+}
+main .sideContent .person p{
+    font-weight: 500;
+}
+main .sideContent div.sideCards {
+    margin-bottom: 10px;
+    width: 300px;
+    color: var(--lightColor);
+    padding-top: 10px;
+}
+main .sideContent .sideCard{
+    align-items: center;
+    background-color: #070d28;
+    border-radius: 10px;
+    display: flex;
+    height: 180px;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+}
+main .sideContent .sideCard img{
+    width: 60%;
+}
+#about .sideCard  {
+    flex-direction: column;
+    text-align: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 5px;
+}
+#about .sideCard .icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+}
+
+#experience .sideCard{
+    background-color: var(--lightBg);
+    color: var(--darkBg);
+    flex-direction: column;
+    gap: 30px;
+    height: auto;
+    justify-content: flex-start;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+    box-shadow: 3px 3px 5px var(--darkBg);
+}
+.sideContent #contact {
+    margin-top: 20px;
+}
+.sideContent #contact .sideCard{
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 10px;
+    font-size: 15px;
+    height: auto;
+}
+.sideContent #contact .sideCard h4 {
+    text-align: center;
+    width: 100%;
+}
+.sideContent #contact .sideCard p a{
+    color: white;
+    text-decoration: none;
+}
+#experience .sideCard .job .tasksList{
+    text-align: left;
+    line-height: 24px;
+    padding: 2px 5px 20px 15px;
+}
+#experience .sideCard .job .tasksList li{
+    cursor: pointer;
+}
+#experience .sideCard .job .tasksList li:hover::marker{
+    color:#3333f0;
+}
+#experience .sideCard .job .tasksList li i {
+    color:#3333f0;
+}
+footer {
+    color: var(--lightColor);
+    text-align: center;
+}
+
+
+/* Scroll to top */
+.scrollToTop { 
+    background-color: #00021fdd;
+    border: none;
+    border-radius: 30px;
+    bottom: 20px;
+    color: var(--lightColor);
+    cursor: pointer;
+    display: none;
+    font-size: 18px;
+    height: 50px;
+    outline: none;
+    position: fixed;
+    right: 20px;
+    width: 50px;
+}
