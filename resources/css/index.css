@@ -184,7 +184,9 @@ main .mainContent1 .projects .projectCards {
 }
 main .mainContent1 .projects .projectCards .card{
     width: 200px;
+    max-width: 200px;
     height: 110px;
+    max-height: 110px;
     background-color: #061634;
     border-radius: 10px;
     overflow: hidden;
